@@ -1,134 +1,224 @@
-\documentclass[12pt,a4paper,fleqn]{article}
-\usepackage{hyperref}
-\usepackage[warn]{mathtext}
-\usepackage[utf8]{inputenc}
-\usepackage{amssymb, amsmath, multicol}
-\usepackage[russian]{babel}
-\usepackage{graphicx}
-\usepackage[shortcuts,cyremdash]{extdash}
-\usepackage{wrapfig}
-\usepackage{floatflt}
-\usepackage{lipsum}
-\usepackage{verbatim}
-\usepackage{concmath}
-\usepackage{euler}
-\usepackage{xcolor}
-\usepackage{etoolbox}
-\usepackage{subfiles}
-\usepackage{enumitem}
-\usepackage{amsthm}
+% "Лаба"
+
+\documentclass[a5paper,10pt, twoside]{article} % тип документа
+
 \usepackage{import}
-\DeclareMathOperator{\sign}{sign}
-
-\makeatletter
-\patchcmd\l@section{%
-  \nobreak\hfil\nobreak
-}{%
-  \nobreak
-  \leaders\hbox{%
-    $\m@th \mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$%
-  }%
-  \hfill
-  \nobreak
-}{}{\errmessage{\noexpand\l@section could not be patched}}
-\makeatother
-
-\oddsidemargin=-15.4mm
-\textwidth=190mm
-\headheight=-32.4mm
-\textheight=277mm
-\tolerance=100
-\parindent=0pt
-\parskip=8pt
-\pagestyle{plain}     
-
-\renewcommand{\tg}{\mathop{\mathrm{tg}}\nolimits}
-\renewcommand{\ctg}{\mathop{\mathrm{ctg}}\nolimits}
-\renewcommand{\arctan}{\mathop{\mathrm{arctg}}\nolimits}
-\newcommand{\divisible}{\mathop{\raisebox{-2pt}{\vdots}}}
-\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
-\newcommand{\diver}{\mathop{\mathrm{div}}\nolimits}
-\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
-\newcommand{\veci}{{\vec\imath}}                % i-орт
-\newcommand{\vecj}{{\vec\jmath}}                % j-орт
-\newcommand{\veck}{{\vec{k}}}                   % k-орт
-\renewcommand{\phi}{\varphi}                    % Красивая фи
-\newcommand{\dotvec}[1]{\dot{\vec{#1}}}
-
-\newcommand{\der}[2]{\frac{d #1}{d #2}} % derivative
-\newcommand{\dpart}[2]{\frac{\partial #1}{\partial #2}} % first partial der
-\newcommand{\ddpart}[2]{\frac{\partial^2 #1}{\partial #2^2}} % вторая частная производная
-\newcommand{\e}{\mathop{\mathrm e}\nolimits}    % Экспонента
-\newcommand{\E}{\mathcal{E}}                    % ЭДС
-\renewcommand{\epsilon}{\varepsilon}            % Красивый эпсилон
-\newcommand{\degr}{\ensuremath{^\circ}}         % Градус
-\newcommand{\const}{\ensuremath{\mathfrak{const}}} % постоянная
-\renewcommand{\C}{\ensuremath{\mathfrak{C}}}    % Постоянная интегрирования
-\newcommand{\Int}{\int\limits}          % Большой интеграл (можно поменять \int на \varint)
-\newcommand{\IInt}{\iint\limits}          % Большой интеграл (можно поменять \int на \varint)
-\newcommand{\Oint}{\oint\limits}                % Большой интеграл
-\newcommand{\lvec}[1]{\overrightarrow{#1}}            % beauty vector arrow
-\newcommand{\quot}[1]{<<#1>>}                   % russian quotes
-%\newcommand{\iu}{\imath}
-\newcommand{\iu}{{i\mkern1mu}}
-\newcommand{\system}[1]{\left\lbrace\begin{array}{c} #1 \end{array} \right.}
-\newcommand{\orsys}[1]{\left[\begin{array}{c} #1 \end{array} \right.}
-
-\newcommand{\cvec}[1]{\left[\begin{array}{c} #1 \end{array} \right]}
-\newcommand{\rvec}[1]{\left[\begin{array}{c c} #1 \end{array} \right]}
-\newcommand{\matr}[2]{\left(\begin{array}{#1} #2 \end{array} \right)}
-\newcommand{\mat}[1]{\left(\begin{matrix} #1 \end{matrix} \right)}
-\newcommand{\matrtwo}[1]{\matr{c c}{#1}}
-\newcommand{\matrthree}[1]{\matr{c c c}{#1}}
-\newcommand{\detmat}[2]{\left|\begin{array}{#1} #2 \end{array} \right|}
-\newcommand{\dettwo}[1]{\detmat{c c}{#1}}
-\newcommand{\detthree}[1]{\detmat{c c c}{#1}}
-
-\newcommand{\T}[1]{{#1}^\mathrm{T}}  % Transpose
-
-\newcommand{\when}[2]{
-  \left. #1 \right|_{#2} \hspace
-}
-\renewcommand{\kappa}{\varkappa}
-\RequirePackage{caption2}
-\renewcommand\captionlabeldelim{}
-\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
-
-\DeclareSymbolFont{T2Aletters}{T2A}{cmr}{m}{it}
-
-{\hbox{$\mathsurround=0pt #1$}}{}}
-% Цвета для гиперссылок
-\definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
-\definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
- 
-\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
 
 
+%  Русский язык
+
+\import{../../headers/}{russian.tex}
+
+% Математика
+
+\import{../../headers/}{math.tex}
+
+\usepackage{concmath, euler}
+% Дефайны
+
+\import{../../headers/}{my_defs.tex}
+
+\graphicspath{{pics/}} % где лежат картинки
+
+% Title Page
 \title
 {
 	\hfill \break	\hfill \break
 	\hfill \break	\hfill \break
+  \hfill \break	\hfill \break
 	Лабораторная работа 4.3.1.
 	
 	ИЗУЧЕНИЕ ДИФРАКЦИИ СВЕТА
 }
 \author{Державин Андрей, Б01-901}
-\date{}
 
-\setcounter{secnumdepth}{0}
 
 \begin{document}
-
+	
 \maketitle
+
+
 \thispagestyle{empty} % выключаем отображение номера для этой страницы
+
 \newpage
-\tableofcontents
+
+\tableofcontents % Вывод содержания
+
 \newpage
 
-\section{ƒËÙ‡ÍˆËˇ‘‡ÛÌ„ÓÙÂ‡Ì‡‰‚Ûı ̆ÂÎˇı}
-\import{src/}{c.tex}
 
-\section{Неделя 2: Прямой метод Ляпунова в теории устойчивости движения.}
-\import{src/}{d.tex}
+\paragraph{Цель работы:}
 
-\end{document}
+	исследовать явления дифракции Френеля и Фраунгофера на щели, изучить влияние дифракции на 
+	разрешающую способность оптических инструментовю.
+
+\paragraph{В работе используются:}
+
+	оптическая скамья, ртутная лампа, моно-
+	хроматор, щели с регулируемой шириной, рамка с вертикальной ни-
+	тью, двойная щель, микроскоп на поперечных салазках с микрометри-
+	ческим винтом, зрительная труба.
+
+
+\section{Дифракция Френеля}
+	Схема установки для наблюдения дифракции Френеля представле на на рис. \ref{img:scheme0}.
+	Световые лучи освещают щель $S_2$ и испытывают на ней дифракцию. Дифракционная картина
+	рассматривается с помощью микроскопа $\text{М}$, сфокусированного на некоторую плоскость
+	наблюдения $\text{П}$.
+
+	\begin{figure}[h]
+		\center{\includegraphics[width=1\linewidth]{scheme.png}}
+		\caption{Схема установки для наблюдения дифракции Френеля}
+		\label{img:scheme0}
+	\end{figure}
+
+	Щель $S_2$ освещается параллельным пучком монохроматического света с помощью коллиматора, 
+	образованного объективом $O_1$ и щелью $S_1$, находящейся в его фокусе. На щель $S_1$ сфокусировано
+	изображение спектральной линии, выделенной из спектра ртутной лампы $\text{Л}$ при помощи
+	простого монохроматора $C$, в котором используется призма прямого зрения.
+
+	Распределение интенсивности света в плоскости наблюдения $\text{П}$ проще всего рассчитывать с
+	помощью зон	Френеля (для щели их иногда называют зонами Шустера). При освещении щели $S_2$
+	параллельным пучком	лучей (плоская волна) зоны Френеля представляют собой полоски, параллельные
+	краям щели (рис. \ref{img:zones}). Результирующая амплитуда в точке наблюдения определяется суперпозицией 
+	колебаний от тех зон Френеля, которые не перекрыты створками щели. Графическое определение
+	результирующей амплитуды производится с помощью векторной диаграммы -- спирали Корню. 
+	Суммарная ширина $m$ зон Френеля $z m$ определяется соотношением
+	\begin{equation}
+		z_m = \sqrt{a m \lambda}
+	\end{equation} \label{eq:wide}
+	\
+	где $a$ -- расстояние от щели до плоскости наблюдения (рис. \ref{img:scheme0}), а $\lambda$ --
+	длина волны
+
+	Вид наблюдаемой дифракционной картины определяется числом Френеля $\Phi$: квадрат числа Френеля
+
+	\begin{displaymath}
+		\Phi^2 = \frac{D}{\sqrt{a \lambda}}
+	\end{displaymath}
+	\
+	-- это отношение ширины щели D к размеру первой зоны Френеля, т.е. число зон Френеля, которые
+	укладываются на ширине щели. Обратную величину называют волновым параметром
+
+	\begin{displaymath}
+		p = \frac{1}{\Phi^2} = \frac{D}{\sqrt{a \lambda}}
+	\end{displaymath}
+
+
+	\begin{wrapfigure}{r}{0.4\linewidth} % обтекание текстом
+		\includegraphics[width=\linewidth]{zones.png}
+		\caption{Зоны Френеля в	плоскости щели}
+		\label{img:zones}
+	\end{wrapfigure}
+
+	Дифракционная картина отсутствует, когда плоскость наблюдения $\text{П}$ совпадает с плоскостью
+	щели: при $\Phi \rightarrow \infty$ мы имеем дело с геометрической оптикой. При небольшом
+	удалении от щели, когда число Френеля $\Phi \gg 1$ (на щели укладывается огромное число зон),
+	распределение интенсивности света за щелью также можно получить с помощью законов геометрической
+	оптики (приближённо). Дифракционная картина в этом случае наблюдается только в узкой области на
+	границе света и тени у краёв экрана.
+
+	При последующем небольшом удалении от щели (или изменении ширины щели $S_2$ ) эти две группы
+	дифракционных полос перемещаются практически независимо друг от друга. Каждая из этих групп
+	образует картину дифракции Френеля на краю экрана. Распределение интенсивности при дифракции
+	света на краю экрана может быть найдено с помощью спирали Корню.
+
+
+	При дальнейшем увеличении расстояния $a$ (или уменьшении ширины	щели $S_2$ ) обе системы
+	дифракционных полос постепенно сближаются и, наконец, при $\Phi \gtrsim 1$ накладываются друг на
+	друга. Распределение интенсивности в плоскости наблюдения в этом случае определяется числом
+	зон Френеля, укладывающихся на полуширине щели. Если это число равно $m$, то в поле зрения
+	наблюдается $n = m - 1$ тёмных полос. Таким образом, по виду дифракционной картины можно оценить число
+	зон Френеля на полуширине щели.
+	
+\section{Дифракция Фраунгофера на щели}
+
+	Картина дифракции резко упрощается, когда ширина щели становится значительно меньше ширины первой
+	зоны Френеля, т.е. если
+
+	\begin{equation}
+		D \gg \sqrt{a \lambda} \text{ или } \Phi \gg 1
+	\end{equation}\label{eq:frenele}
+
+	Это условие всегда выполняется при достаточно большом расстоянии a от щели до плоскости наблюдения.
+	Дифракционную картину, наблюдаемую в этом случае, принято называть дифракцией Фраунгофера.
+	Исследование такой дифракционной картины заметно облегчается, потому что упрощаются фазовые
+	соотношения. Это поясняет рис. 3. При выполнении условия \eqref{eq:frenele} разность хода между
+	крайними лучами, приходящими от щели в точку наблюдения $P$ , с хорошим приближением можно
+	вычислять по формуле
+
+	\begin{equation}
+		\delta = r_2 - r_1 \approx D \sin \Theta \approx D \cdot \Theta
+	\end{equation}\label{eq:delta}
+
+	Здесь предполагается, что дифракционный угол $\Theta$ достаточно мал, так что 
+	$\sin \Theta \approx \Theta$. Формула \eqref{eq:delta} справедлива при условии $\delta \ll \lambda / 2$.
+	Можно показать, что это условие эквивалентно условию \eqref{eq:frenele}
+
+	\begin{figure}[h]
+		\center{\includegraphics[width=1\linewidth]{scheme1.png}}
+		\caption{Схема установки для наблюдения дифракции Фраунгофера на щели}
+		\label{img:scheme1}
+	\end{figure}
+
+
+	Дифракцию Френеля и Фраунгофера можно наблюдать на одной и той же установке (рис. \ref{img:scheme0}).
+	Однако при обычных размерах установки дифракция Фраунгофера возникает только при очень узких щелях.
+	Например, при $a \approx 20-40$ см и $\lambda \approx 5 \cdot 10^{-5}$ см получаем $D \ll 0.3$ см.
+	Поскольку работать с такими тонкими щелями неудобно, для наблюдения дифракции Фраунгофера к схеме,
+	изображённой на рис. \ref{img:scheme0} добавляется объектив $O_2$ (рис. \ref{img:scheme1}).
+
+	\begin{wrapfigure}{r}{0.4\linewidth} % обтекание текстом
+		\includegraphics[width=\linewidth]{phase.png}
+		\caption{К фазовым соотн. при дифр. Фраунгофера}
+		\label{img:phase}
+	\end{wrapfigure}
+
+	Дифракционная картина наблюдается здесь в фокальной плоскости объектива $O_2$. Каждому значению
+	угла $\Theta$ соответствует в этой плоскости точка, отстоящая от оптической оси на расстоянии
+
+	\begin{equation}
+		X = f_2 \tg \Theta \approx f_2 \Theta
+	\end{equation}\label{eq:dist}
+
+	Поскольку объектив не вносит дополнительной разности хода щели между интерферирующими лучами
+	(таутохронизм), в его фокальной плоскости наблюдается неискажённая дифракционная картина 
+	Фраунгофера. Эта картина соответствует бесконечно удалённой плоскости наблюдения. Распределение
+	интенсивности в дифракционной картине Фраунгофера представлено на рис. \ref{img:phase}.
+
+	\begin{wrapfigure}{r}{0.4\linewidth} % обтекание текстом
+		\includegraphics[width=\linewidth]{dist.png}
+		\caption{Зоны Френеля в	плоскости щели}
+		\label{img:dist}
+	\end{wrapfigure}
+
+	Поскольку при $\Theta = 0$ разность хода между любой парой лучей равна нулю, в центре поля зрения
+	наблюдается дифракционный максимум (светлая полоса). Первый минимум (первая тёмная полоса) 
+	соответствует, очевидно, такому значению дифракционного угла $\Theta_1$, при котором
+	в точке наблюдения разность хода пробегает все возможные значения от нуля до $2 \pi$.
+	Рассуждая аналогичным образом, можно определить угловую координату $\Theta_m$
+	любой тёмной полосы. Для малых углов
+
+	\begin{equation}
+		m \lambda = D \cdot \Theta
+	\end{equation}\label{eq:ang}
+
+	Расстояние $X_m$ тёмной полосы от оптической оси объектива $O_2$ пропорционально фокусному
+	расстоянию $f_2$. Из \eqref{eq:dist} и \eqref{eq:ang} следует
+
+	\begin{equation}
+		X_m = f_2 \cdot m \frac{\lambda}{D}
+	\end{equation}\label{eq:dist_m}
+
+	Из \eqref{eq:dist_m} видно, что при малых углах минимумы эквидистантны, а расстояния $\Delta X$
+	между минимумами обратно пропорциональны ширине $D$ щели $S_2$.
+
+  \section{Дифракция Фраунгофера на двух щелях}
+    \import{src/}{c.tex}
+
+  \section{Влияние дифракции на разрешающую способность оптического инструмента}
+    \import{src/}{d.tex}
+
+\section{Ход работы}
+
+\end{document} % конец документа

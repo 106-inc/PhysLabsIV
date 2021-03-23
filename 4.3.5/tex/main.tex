@@ -1,9 +1,10 @@
+
 % "Лаба"
 
 \documentclass[a5paper,10pt, twoside]{article} % тип документа
 
 \usepackage{hyperref}
-
+\usepackage{fancyhdr}
 \usepackage{import}
 
 % Математика
@@ -18,7 +19,17 @@
 
 \import{../../headers/}{my_defs.tex}
 
-\graphicspath{{pics/}} % где лежат картинки
+%\fancyhf{}
+\renewcommand{\footrulewidth}{ .0em }
+\fancyfoot[C]{\texttt{\textemdash~\thepage~\textemdash}}
+\fancyhead[L]{Работа 4.3.5 \hfil}
+\fancyhead[R]{\hfil SOMEBEODY, Б01-901 группа }
+
+\pagestyle{fancy}
+
+\graphicspath{{src/pics/}} % где лежат картинки
+
+\counterwithin{figure}{section}
 
 % Title Page
 \title
@@ -43,7 +54,7 @@
 \newpage
 
 \tableofcontents % Вывод содержания
-
+\thispagestyle{plain}
 \newpage
 
 
@@ -62,5 +73,17 @@
 
     \subsubsection{Голограмма точечного источника (голограмма Габора)}
     \import{src/}{3.1.tex}
+
+      \paragraph{Зонная решётка Габора.}
+      \import{src/}{3.1.1.tex}
+
+      \paragraph{Сферическая восстанавливающая волна.}
+      \import{src/}{3.1.2.tex}
+    
+    \subsubsection{Разрешающая способность голограммы}
+    \import{src/}{3.2.tex}
+
+    \subsection{Схема с наклонным опорным пучком}
+    \import{src/}{3.3.tex}
 
 \end{document}

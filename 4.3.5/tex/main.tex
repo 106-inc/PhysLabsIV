@@ -3,7 +3,7 @@
 \documentclass[a5paper,10pt, twoside]{article} % тип документа
 
 \usepackage{hyperref}
-
+\usepackage{fancyhdr}
 \usepackage{import}
 
 % Математика
@@ -18,6 +18,13 @@
 
 \import{../../headers/}{my_defs.tex}
 
+%\fancyhf{}
+\renewcommand{\footrulewidth}{ .0em }
+\fancyfoot[C]{\texttt{\textemdash~\thepage~\textemdash}}
+\fancyhead[L]{Работа 4.3.5 \hfil}
+\fancyhead[R]{\hfil SOMEBEODY, Б01-901 группа }
+
+\pagestyle{fancy}
 
 \graphicspath{{src/pics/}} % где лежат картинки
 

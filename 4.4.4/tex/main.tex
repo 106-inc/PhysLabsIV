@@ -1,0 +1,92 @@
+
+% "Лаба"
+
+\documentclass[a5paper,10pt, twoside]{article} % тип документа
+
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{import}
+
+% Математика
+
+\import{../../headers/}{math.tex}
+
+%  Русский язык
+
+\import{../../headers/}{russian.tex}
+
+% Дефайны
+
+\import{../../headers/}{my_defs.tex}
+
+%\fancyhf{}
+\renewcommand{\footrulewidth}{ .0em }
+\fancyfoot[C]{\texttt{\textemdash~\thepage~\textemdash}}
+\fancyhead[L]{Работа 4.3.5 \hfil}
+\fancyhead[R]{\hfil Хайдари Фарид, группа Б01-901}
+
+\pagestyle{fancy}
+
+\graphicspath{{src/pics/}} % где лежат картинки
+
+\counterwithin{figure}{section}
+
+% Title Page
+\title
+{
+\hfill \break	\hfill \break
+\hfill \break	\hfill \break
+Лабораторная работа 4.4.4.
+
+ИНТЕРФЕРОМЕТР ФАБРИ-ПЕРО
+}
+\author{Хайдари Фарид, Б01-901}
+
+%\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\maketitle
+
+
+\thispagestyle{empty} % выключаем отображение номера для этой страницы
+
+\newpage
+
+\tableofcontents % Вывод содержания
+\thispagestyle{plain}
+\newpage
+
+
+\paragraph{Цель работы:}
+
+Изучение интерферометра Фабри-Перо и определение его характеристик, как спектрального прибора.
+
+\paragraph{В работе используются:}
+
+Интерферометры Фабри-Перо, линзы, светофильтр, ртутная лампа ПРК-2, высокочастотная натриевая лампа,
+катетометры КМ-6.
+
+\section{Теоретические сведения}
+\import{src/}{1_theor.tex}
+
+  \subsection{Измерение длин волн $\lambda$ и расстояний $d \lambda$ между спектральными линиями}
+  \import{src/}{2_len.tex}
+
+  \subsection{Дисперсия интерферометра}
+  \import{src/}{3_disp.tex}
+
+  \subsection{Дисперсионная область}
+  \import{src/}{4_disp_area.tex}
+
+  \subsection{Разрешающая способность интерферометра Фабри-Перо}
+  \import{src/}{5_razr.tex}
+
+\section{Экспериментальная установка}
+\import{src/}{6_ust.tex}
+
+\section{Ход работы}
+\import{src/}{7_hod_F.tex}
+
+
+\end{document}

@@ -1,0 +1,97 @@
+\documentclass[a5paper,10pt, twoside]{article} % тип документа
+
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{import}
+
+% Математика
+
+\import{../../headers/}{math.tex}
+
+%  Русский язык
+
+\import{../../headers/}{russian.tex}
+
+% Дефайны
+
+\import{../../headers/}{my_defs.tex}
+
+%\fancyhf{}
+\renewcommand{\footrulewidth}{ .0em }
+\fancyfoot[C]{\texttt{\textemdash~\thepage~\textemdash}}
+\fancyhead[L]{Работа 4.3.5 \hfil}
+\fancyhead[R]{\hfil SOMEBEODY, Б01-901 группа }
+
+\pagestyle{fancy}
+
+\graphicspath{{src/pics/}} % где лежат картинки
+
+\counterwithin{figure}{section}
+
+% Title Page
+\title
+{
+\hfill \break	\hfill \break
+\hfill \break	\hfill \break
+Лабораторная работа 4.3.5.
+
+ИЗУЧЕНИЕ ГОЛОГРАММЫ
+}
+\author{SOMEBEODY, Б01-901}
+
+%\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\maketitle
+
+
+\thispagestyle{empty} % выключаем отображение номера для этой страницы
+
+\newpage
+
+\tableofcontents % Вывод содержания
+\thispagestyle{plain}
+\newpage
+
+
+\paragraph{Цель работы:}
+
+ознакомление с методами получения и анализа поляризованного света.
+
+\paragraph{В работе используются:}
+
+оптическая скамья с осветителем; зеленый светофильтр; два поляроида; черное зеркало; 
+полированная эбонитовая пластинка; стопа стеклянных пластинок; слюдяные пластинки 
+разной толщины; пластинки в $1/4$ и $1/2$ длины волны; пластинка в одну длину волны для 
+зеленого света (пластинка чувствительного оттенка)
+
+\section{Теоретические сведения}
+
+  \subsection{Естественный и поляризованный свет}
+  \import{src/}{1_1.tex}
+
+  \subsection{Методы получения линейно поляризованного света}
+  \import{src/}{1_2.tex}
+
+  \subsection{Определение направления разрешенной плоскости колебаний поляроида.}
+  \import{src/}{1_3.tex}
+
+  \subsection{Получение эллиптически поляризованного света}
+  \import{src/}{1_4.tex}
+
+  \subsection{Анализ эллиптически поляризованного света}
+  \import{src/}{1_5.tex}
+
+  \subsection{Пластинка чувствительного оттенка}
+  \import{src/}{1_6.tex}
+
+  \subsection{Интерференция поляризованных лучей}
+  \import{src/}{1_7.tex}
+
+
+Ход работы
+\section{}
+\import{src/}{hod_F.tex}
+
+\end{document}

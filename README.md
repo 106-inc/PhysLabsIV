@@ -1,2 +1,2 @@
-# PhysLabs4
+# PhysLabsIV
 Labs from 4 semester
